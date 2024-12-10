@@ -141,6 +141,11 @@ function LastQuestion() {
                 placeholder="Your answer"
                 value={selectedOption}
                 onChange={(e) => setSelectedOption(e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") {
+                    handleVerify();
+                  }
+                }}
                 className="answer-input"
                 aria-label="Your answer"
               />

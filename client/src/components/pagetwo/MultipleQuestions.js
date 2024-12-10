@@ -258,23 +258,27 @@ function MultipleQuestions() {
 
         </div>
 
+        <div className="input-verify-container">
+  <input
+    type="text"
+    placeholder="Your answer"
+    value={ans1}
+    onChange={(e) => setAns1(e.target.value)}
+    onKeyDown={(e) => {
+      if (e.key === "Enter") {
+        handleVerify(2, ans1); // Pass the question number and answer
+      }
+    }}
+    className="answer-input"
+  />
+  <button
+    onClick={() => handleVerify(2, ans1)}
+    className="verify-button"
+  >
+    Verify
+  </button>
+</div>
 
-
-         <div className="input-verify-container">
-          <input
-            type="text"
-            placeholder="Your answer"
-            value={ans1}
-            onChange={(e) => setAns1(e.target.value)}
-            className="answer-input"
-          />
-          <button
-            onClick={() => handleVerify(2, ans1)}
-            className="verify-button"
-          >
-            Verify
-          </button>
-        </div>
         {verify1 !== null && (
           <p className={`feedback ${verify1 ? "correct" : "incorrect"}`}>
             {verify1 ? "✅ Correct" : "❌ Incorrect"}
@@ -308,20 +312,26 @@ function MultipleQuestions() {
 
 
         <div className="input-verify-container">
-          <input
-            type="text"
-            placeholder="Your answer"
-            value={ans2}
-            onChange={(e) => setAns2(e.target.value)}
-            className="answer-input"
-          />
-          <button
-            onClick={() => handleVerify(3, ans2)}
-            className="verify-button"
-          >
-            Verify
-          </button>
-        </div>
+  <input
+    type="text"
+    placeholder="Your answer"
+    value={ans2}
+    onChange={(e) => setAns2(e.target.value)}
+    onKeyDown={(e) => {
+      if (e.key === "Enter") {
+        handleVerify(3, ans2); // Pass the question number and answer
+      }
+    }}
+    className="answer-input"
+  />
+  <button
+    onClick={() => handleVerify(3, ans2)}
+    className="verify-button"
+  >
+    Verify
+  </button>
+</div>
+
         {verify2 !== null && (
           <p className={`feedback ${verify2 ? "correct" : "incorrect"}`}>
             {verify2 ? "✅ Correct" : "❌ Incorrect"}
@@ -388,20 +398,26 @@ function MultipleQuestions() {
 
        
         <div className="input-verify-container">
-          <input
-            type="text"
-            placeholder="Your answer"
-            value={ans3}
-            onChange={(e) => setAns3(e.target.value)}
-            className="answer-input"
-          />
-          <button
-            onClick={() => handleVerify(4, ans3)}
-            className="verify-button"
-          >
-            Verify
-          </button>
-        </div>
+  <input
+    type="text"
+    placeholder="Your answer"
+    value={ans3}
+    onChange={(e) => setAns3(e.target.value)}
+    onKeyDown={(e) => {
+      if (e.key === "Enter") {
+        handleVerify(4, ans3); // Pass the question number and answer
+      }
+    }}
+    className="answer-input"
+  />
+  <button
+    onClick={() => handleVerify(4, ans3)}
+    className="verify-button"
+  >
+    Verify
+  </button>
+</div>
+
         {verify3 !== null && (
           <p className={`feedback ${verify3 ? "correct" : "incorrect"}`}>
             {verify3 ? "✅ Correct" : "❌ Incorrect"}
