@@ -126,13 +126,18 @@ function FirstQuestion() {
     <div className="question-container">
       <div className="question-box">
         <div className="question-header">
-        <div style={{margin:"auto"}}><h1 className="question-title"><span style={{color:"orange"}}>1. </span>{question.Q_Title}</h1> </div>  
+          <div style={{ margin: "auto" }}>
+            <h1 className="question-title">
+              <span style={{ color: "orange" }}>1. </span>
+              {question.Q_Title}
+            </h1>
+          </div>
           <span className={isSolved ? "solved" : "unsolved"}>
             {isSolved ? "Solved!" : "Not solved"}
           </span>
         </div>
         <p className="question-description">{question.Q_Des}</p>
-
+  
         <div className="input-verify-container">
           <div className="input-button-group">
             <input
@@ -140,6 +145,11 @@ function FirstQuestion() {
               placeholder="Your answer"
               value={selectedOption}
               onChange={(e) => setSelectedOption(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  handleVerify();
+                }
+              }}
               className="answer-input"
             />
             <button onClick={handleVerify} className="verify-button">
@@ -147,7 +157,7 @@ function FirstQuestion() {
             </button>
           </div>
         </div>
-
+  
         {isCorrect && <p className="correct-message">✅ Correct Answer</p>}
         {showError && !isCorrect && <p className="error-message">{showError}</p>}
       </div>
@@ -161,6 +171,5 @@ function FirstQuestion() {
       </div>
     </div>
   );
-}
-
+}  
 export default FirstQuestion;
